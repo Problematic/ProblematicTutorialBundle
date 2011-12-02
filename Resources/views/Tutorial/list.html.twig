@@ -1,0 +1,14 @@
+{% extends "ProblematicTutorialBundle::layout.html.twig" %}
+
+{% block title %}Tutorial List{% endblock %}
+
+{% block content %}
+<h1>Tutorials</h1>
+{% for tutorial in tutorials %}
+<div>
+    <h2><a href="{{ path('problematic_tutorial_tutorials_show', {"slug": tutorial.slug}) }}">{{ tutorial.title }}</a></h2>
+    <p>posted by {{ tutorial.authorname }} on {{ tutorial.createdat|format('l, d-M-y H:i:s T') }}</p>
+    <p>{{ tutorial.description }}</p>
+</div>
+{% endfor %}
+{% endblock %}

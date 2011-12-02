@@ -1,0 +1,19 @@
+services:
+    problematic_tutorial.manager.tutorial:
+        class: Problematic\TutorialBundle\Entity\TutorialManager
+        arguments:
+            em: "@doctrine.orm.entity_manager"
+            class: %problematic_tutorial.tutorial.class%
+    problematic_tutorial.blamer.tutorial.security:
+        class: Problematic\TutorialBundle\Blamer\SecurityTutorialBlamer
+        arguments:
+            securityContext: "@security.context"
+    problematic_tutorial.creator.tutorial:
+        class: Problematic\TutorialBundle\Creator\TutorialCreator
+        arguments:
+            tutorialManager: "@problematic_tutorial.manager.tutorial"
+            blamer: "@problematic_tutorial.blamer.tutorial.security"
+    problematic_tutorial.form_type.tutorial:
+        class: Problematic\TutorialBundle\Form\TutorialType
+        tags:
+            - { name: form.type, alias: problematic_tutorial_tutorial }

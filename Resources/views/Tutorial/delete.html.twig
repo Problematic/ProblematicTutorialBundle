@@ -1,0 +1,14 @@
+{% extends "ProblematicTutorialBundle::layout.html.twig" %}
+
+{% block title %}Red alert, keptin!{% endblock %}
+
+{% block content %}
+<h1>Deleting Stuff</h1>
+<p>Are you <strong>sure</strong> you want to delete the tutorial "{{ tutorial.title }}" (id#{{ tutorial.id }})? There's (almost) no going back.</p>
+
+<form method="post">
+    {{ form_widget(form) }}
+    <input class="btn danger" type="submit" value="Do it." />
+    <a class="btn primary" href="{{ path('problematic_tutorial_tutorials_show', {"slug": tutorial.slug}) }}">Nevermind</a>
+</form>
+{% endblock %}

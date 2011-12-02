@@ -1,0 +1,33 @@
+{% extends "ProblematicTutorialBundle::layout.html.twig" %}
+
+{% block title %}Editing "{{ tutorial.title }}"{% endblock %}
+
+{% block content %}
+<h1>Editing "{{ tutorial.title }}"</h1>
+
+<form action="{{ path('problematic_tutorial_tutorials_edit', {"id": tutorial.id}) }}" method="post" {{ form_enctype(form) }}>
+    <div class="clearfix">
+        {{ form_label(form.title) }}
+        <div class="input">
+            {{ form_errors(form.title) }}
+            {{ form_widget(form.title, { 'attr': {'class': 'span10'}}) }}
+        </div>
+    </div>
+    <div class="clearfix">
+        {{ form_label(form.description) }}
+        <div class="input">
+            {{ form_errors(form.description) }}
+            {{ form_widget(form.description, { 'attr': {'class': 'span10'}}) }}
+        </div>
+    </div>
+    <div class="clearfix">
+        {{ form_label(form.content) }}
+        <div class="input">
+            {{ form_errors(form.content) }}
+            {{ form_widget(form.content, { 'attr': {'class': 'span10'}}) }}
+        </div>
+    </div>
+    {{ form_rest(form) }}
+    <input class="btn primary" type="submit" />
+</form>
+{% endblock %}

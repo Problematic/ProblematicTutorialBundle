@@ -1,0 +1,3 @@
+problematic_tutorial_tutorials:
+    resource: "@ProblematicTutorialBundle/Resources/config/routing/tutorial.yml"
+    prefix: /tutorials

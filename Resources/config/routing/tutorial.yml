@@ -1,0 +1,27 @@
+problematic_tutorial_tutorials_list:
+    pattern: /
+    defaults: { _controller: ProblematicTutorialBundle:Tutorial:list }
+    requirements:
+        _method: GET
+
+problematic_tutorial_tutorials_new:
+    pattern: /new
+    defaults: { _controller: ProblematicTutorialBundle:Tutorial:new }
+
+problematic_tutorial_tutorials_edit:
+    pattern: /{id}/edit
+    defaults: { _controller: ProblematicTutorialBundle:Tutorial:edit }
+    requirements:
+        id: \d+
+
+problematic_tutorial_tutorials_delete:
+    pattern: /{id}/delete
+    defaults: { _controller: ProblematicTutorialBundle:Tutorial:delete }
+    requirements:
+        id: \d+
+
+problematic_tutorial_tutorials_show:
+    pattern: /{slug}
+    defaults: { _controller: ProblematicTutorialBundle:Tutorial:show }
+    requirements:
+        _method: GET
